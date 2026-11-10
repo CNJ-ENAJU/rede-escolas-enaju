@@ -146,6 +146,16 @@
     .event-card p{margin:0}
     .event-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:7px}
     .event-meta span{padding:3px 7px;border-radius:999px;background:#F2F6F9;color:#60758B;font-size:9px;font-weight:700}
+    .program-heading{margin:25px 0 12px}
+    .school-program-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+    .school-program-card{display:flex;flex-direction:column;min-height:202px;padding:15px;border:1px solid var(--line);border-radius:var(--radius);background:white;box-shadow:var(--shadow)}
+    .school-program-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px}
+    .school-hours{flex:none;color:var(--green);font-size:10px;font-weight:900}
+    .school-program-card h3{margin-bottom:6px;font-size:14px}
+    .school-program-card p{margin:0 0 12px;color:var(--muted);font-size:10px;line-height:1.5}
+    .school-program-card>a{margin-top:auto;color:var(--blue);font-size:10px;font-weight:850}
+    .school-program-card>a.school-secondary-link{margin-top:7px}
+    .program-footnote{margin:11px 0 0;color:var(--muted);font-size:10px}
     .profile-hero{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 26px;margin-bottom:18px;border-radius:22px;background:linear-gradient(115deg,var(--deep),var(--navy) 60%,#0A6EA9);color:white}
     .profile-hero:after{content:"";position:absolute;right:-50px;top:-90px;width:250px;height:250px;border:1px solid rgba(0,155,212,.5);border-radius:50%;box-shadow:0 0 0 17px rgba(0,155,212,.07),0 0 0 38px rgba(0,155,212,.04)}
     .profile-hero .copy{position:relative;z-index:1;max-width:660px}
@@ -199,6 +209,7 @@
       .feed-grid,.profile-layout{grid-template-columns:minmax(0,1fr) 270px}
       .feature-banner{align-items:flex-start;flex-direction:column}
       .practice-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .school-program-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
     }
     @media(max-width:760px){
       .page-wrap{width:min(100% - 28px,620px);margin-top:19px}
@@ -210,6 +221,7 @@
       .main-nav{justify-content:flex-start;padding-bottom:2px}
       .nav-link{padding:9px 10px;font-size:11px}
       .feed-grid,.profile-layout{grid-template-columns:1fr}
+      .school-program-grid{grid-template-columns:1fr}
       .feed-tools{align-items:flex-start;flex-direction:column}
       .search{max-width:none;width:100%}
       .side-column{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -245,7 +257,7 @@
   </style>
 </head>
 <body>
-  <div class="demo-strip"><span class="demo-dot" aria-hidden="true"></span> Protótipo navegável · conteúdos e perfis ilustrativos · versão para discussão</div>
+  <div class="demo-strip"><span class="demo-dot" aria-hidden="true"></span> Protótipo navegável · cursos ligados a fontes oficiais · perfis demonstrativos</div>
   <header class="topbar">
     <a class="brand" href="#inicio" aria-label="Rede ENAJU — início">
       <span class="brand-mark" aria-hidden="true"><span>ENAJU</span></span>
@@ -295,56 +307,32 @@
             </label>
           </div>
           <div class="post-list" id="feed-list">
-            <article class="post-card" data-kind="pratica" data-search="acolhimento integração novos servidores roteiro escola judicial gestão de pessoas">
+            <article class="post-card" data-kind="agenda" data-search="reunião nacional escolas poder judiciário 11 novembro 2026 teams">
               <div class="post-inner">
-                <div class="post-top">
-                  <span class="avatar green" aria-hidden="true">E</span>
-                  <div class="post-author"><strong>Escola judicial · exemplo</strong><small>Relato demonstrativo · boas práticas</small></div>
-                  <span class="post-label featured">Em destaque</span>
-                </div>
-                <h2 class="post-title">Acolhimento que transforma a chegada em aprendizagem</h2>
-                <p>Um roteiro simples de integração pode reunir escuta inicial, mapa de serviços e uma pessoa de referência. Compartilhe o que funciona na sua unidade e adapte para a realidade local.</p>
-                <div class="tag-row"><span class="tag">Gestão de pessoas</span><span class="tag">Integração</span><span class="tag">Exemplo</span></div>
+                <div class="post-top"><span class="avatar green" aria-hidden="true">EN</span><div class="post-author"><strong>Rede ENAJU</strong><small>Encontro confirmado · 11 nov 2026</small></div><span class="post-label featured">Amanhã · 10h</span></div>
+                <h2 class="post-title">Reunião Nacional das Escolas do Poder Judiciário</h2>
+                <p>Encontro virtual de articulação da rede, às 10h (horário de Brasília), pelo Microsoft Teams. A pauta detalhada segue a convocação encaminhada às escolas.</p>
+                <div class="tag-row"><span class="tag">11/11/2026 · 10h</span><span class="tag">Microsoft Teams</span></div>
               </div>
-              <div class="post-actions">
-                <button class="post-action" type="button" data-like aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M20.8 8.8c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.5 4.5 0 0 1 8.8-1.1 4.5 4.5 0 0 1 8.8 1.1Z"/></svg><span>Apoiar</span></button>
-                <button class="post-action" type="button" data-compose="comentario"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 2v-5.5A7.5 7.5 0 1 1 20 11.5Z"/></svg>Comentar</button>
-                <span class="post-label">Demonstração</span>
-              </div>
+              <div class="post-actions"><button class="post-action" type="button" data-event-info="Reunião Nacional das Escolas do Poder Judiciário" data-description="11 de novembro de 2026, às 10h (horário de Brasília), em formato virtual pelo Microsoft Teams. A pauta e os apresentadores devem ser consultados na convocação enviada às escolas.">Ver detalhes</button><span class="post-label">Confirmada</span></div>
             </article>
-            <article class="post-card" data-kind="pergunta" data-search="pergunta formação digital inteligência artificial docência competências">
+            <article class="post-card" data-kind="agenda" data-search="justiça federal saúde mental servidores novembro dezembro 2026 cjf">
               <div class="post-inner">
-                <div class="post-top">
-                  <span class="avatar" aria-hidden="true">R</span>
-                  <div class="post-author"><strong>Roda de diálogo · exemplo</strong><small>Pergunta para a rede · conteúdo ilustrativo</small></div>
-                  <span class="post-label">Conversa</span>
-                </div>
-                <h2 class="post-title">Que temas de formação digital precisam entrar na agenda das escolas?</h2>
-                <p>Uma pergunta compartilhada pode abrir caminho para uma palestra, uma trilha ou um grupo de trabalho. Deixe sua contribuição para inspirar a próxima conversa.</p>
-                <div class="tag-row"><span class="tag">Formação digital</span><span class="tag">Docência</span><span class="tag">Exemplo</span></div>
+                <div class="post-top"><span class="avatar" aria-hidden="true">JF</span><div class="post-author"><strong>CEJ · Conselho da Justiça Federal</strong><small>Formação em andamento · servidores</small></div><span class="post-label">26 horas</span></div>
+                <h2 class="post-title">Bem-estar e saúde mental em unidades judiciárias</h2>
+                <p>Turma para servidores da Justiça Federal, de 9/11 a 9/12, em EaD com tutoria. Inscrições encerradas em 4/11; a página oficial informa o cronograma e os requisitos.</p>
+                <div class="tag-row"><span class="tag">Segurança psicológica</span><span class="tag">Saúde no trabalho</span></div>
               </div>
-              <div class="post-actions">
-                <button class="post-action" type="button" data-like aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M20.8 8.8c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.5 4.5 0 0 1 8.8-1.1 4.5 4.5 0 0 1 8.8 1.1Z"/></svg><span>Apoiar</span></button>
-                <button class="post-action" type="button" data-compose="comentario"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 2v-5.5A7.5 7.5 0 1 1 20 11.5Z"/></svg>Comentar</button>
-                <span class="post-label">Demonstração</span>
-              </div>
+              <div class="post-actions"><a class="post-action" href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/centro-de-estudos-judiciarios-1/eventos/ead-1/bemunj_serv_t2_2026" target="_blank" rel="noopener noreferrer">Fonte oficial ↗</a><span class="post-label">Em andamento</span></div>
             </article>
-            <article class="post-card" data-kind="agenda" data-search="agenda encontro escolas roda de conversa formação instrutores data definir">
+            <article class="post-card" data-kind="agenda" data-search="enaju lia3r inteligência artificial servidores capacitação 2026">
               <div class="post-inner">
-                <div class="post-top">
-                  <span class="avatar" aria-hidden="true">A</span>
-                  <div class="post-author"><strong>Agenda da rede · exemplo</strong><small>Proposta de encontro · data a confirmar</small></div>
-                  <span class="post-label">Agenda</span>
-                </div>
-                <h2 class="post-title">Roda de conversa: experiências que atravessam tribunais</h2>
-                <p>Um encontro curto para apresentar práticas, fazer perguntas e aproximar equipes de formação. A programação será construída com as escolas.</p>
-                <div class="tag-row"><span class="tag">Encontro virtual</span><span class="tag">Data a definir</span><span class="tag">Exemplo</span></div>
+                <div class="post-top"><span class="avatar green" aria-hidden="true">E</span><div class="post-author"><strong>ENAJU · catálogo 2026/2</strong><small>Curso autoinstrucional · Poder Judiciário</small></div><span class="post-label">10 horas</span></div>
+                <h2 class="post-title">LIA3R: capacitação para utilização</h2>
+                <p>Formação para magistradas, magistrados, servidoras e servidores sobre uso responsável da assistente judicial, incluindo aplicação em secretaria, engenharia de prompts e criação de agentes.</p>
+                <div class="tag-row"><span class="tag">Inteligência artificial</span><span class="tag">Uso em secretaria</span></div>
               </div>
-              <div class="post-actions">
-                <button class="post-action" type="button" data-like aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M20.8 8.8c0 5.4-8.8 11-8.8 11s-8.8-5.6-8.8-11a4.5 4.5 0 0 1 8.8-1.1 4.5 4.5 0 0 1 8.8 1.1Z"/></svg><span>Apoiar</span></button>
-                <button class="post-action" type="button" data-compose="comentario"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H6l-3 2v-5.5A7.5 7.5 0 1 1 20 11.5Z"/></svg>Comentar</button>
-                <span class="post-label">Demonstração</span>
-              </div>
+              <div class="post-actions"><a class="post-action" href="https://enaju.cnj.jus.br/ead/course/info.php?id=499" target="_blank" rel="noopener noreferrer">Acessar curso ↗</a><span class="post-label">Catálogo oficial</span></div>
             </article>
           </div>
           <div class="empty-state" id="feed-empty">Não encontrei publicações com esse filtro. Experimente outro tema.</div>
@@ -354,8 +342,8 @@
           <section class="side-card">
             <div class="side-head"><h2>Agenda da rede</h2><button class="side-link" type="button" data-view="agenda">Ver agenda</button></div>
             <div class="agenda-mini">
-              <div class="agenda-row"><span class="agenda-date">DATA<br>A DEFINIR</span><div><strong>Roda de conversa entre escolas</strong><small>Proposta · formato virtual</small></div></div>
-              <div class="agenda-row"><span class="agenda-date">EM<br>CONSTRUÇÃO</span><div><strong>Mostra de boas práticas</strong><small>Programação a construir com a rede</small></div></div>
+              <div class="agenda-row"><span class="agenda-date">11<br>NOV</span><div><strong>Reunião Nacional das Escolas</strong><small>10h · virtual pelo Teams</small></div></div>
+              <div class="agenda-row"><span class="agenda-date">16<br>NOV</span><div><strong>Formação de conciliadores · CJF</strong><small>Próxima turma · servidores indicados</small></div></div>
             </div>
           </section>
           <section class="side-card network-card">
@@ -365,7 +353,7 @@
             <button class="button" type="button" data-go-profile>Conhecer o Meu ENAJU →</button>
           </section>
           <section class="side-card">
-            <div class="side-head"><h2>Temas em circulação</h2><span class="post-label">Exemplos</span></div>
+            <div class="side-head"><h2>Temas em circulação</h2><span class="post-label">Rede</span></div>
             <div class="topic-cloud">
               <button type="button" data-topic="acessibilidade">Acessibilidade</button>
               <button type="button" data-topic="formação digital">Formação digital</button>
@@ -380,8 +368,8 @@
       <div class="feature-banner">
         <div class="feature-copy">
           <span class="eyebrow">Conhecimento reutilizável</span>
-          <h1 id="praticas-title">Boas práticas que viajam pela rede.</h1>
-          <p>Relatos breves, materiais e aprendizados para inspirar outras escolas — cada unidade adapta ao seu contexto.</p>
+          <h1 id="praticas-title">Práticas e ideias que circulam pela rede.</h1>
+          <p>Experiências e propostas de colaboração apresentadas pelas escolas, com origem e estágio identificados.</p>
         </div>
         <div class="feature-actions"><button class="button button-light" type="button" data-compose="pratica">＋ Compartilhar uma prática</button></div>
       </div>
@@ -398,26 +386,19 @@
         </label>
       </div>
       <div class="practice-grid" id="practice-list">
-        <article class="practice-card" data-practice="gestao" data-search="acolhimento integração equipes gestão pessoas">
-          <span class="practice-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM20 8v6M23 11h-6"/></svg></span>
-          <span class="post-label">Exemplo · gestão</span>
-          <h3>Integração que começa pela escuta</h3>
-          <p>Um roteiro de acolhimento que combina conversa inicial, mapa de serviços e acompanhamento por pares.</p>
-          <button class="side-link" type="button" data-open-practice data-title="Integração que começa pela escuta" data-description="Exemplo de prática: iniciar com uma conversa sobre necessidades de aprendizagem, apresentar um mapa simples dos serviços e combinar uma pessoa de referência para as primeiras semanas. Cada escola pode adaptar a sequência e os materiais ao seu contexto.">Ver prática →</button>
+        <article class="practice-card" data-practice="gestao" data-search="renejum conecta plataforma calendário cursos banco formadores trilhas escolas">
+          <span class="practice-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="6" cy="12" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="m8 11 8-4M8 13l8 4"/></svg></span>
+          <span class="post-label">Ideia apresentada · RENEJUM</span>
+          <h3>RENEJUM Conecta</h3>
+          <p>Proposta de plataforma para compartilhar cursos, calendários, trilhas formativas e um banco de formadores entre escolas judiciais.</p>
+          <a class="side-link" href="https://renejum.enfam.jus.br/boas-praticas/oficina-de-inovacao-mude/" target="_blank" rel="noopener noreferrer">Ver registro da proposta ↗</a>
         </article>
-        <article class="practice-card" data-practice="didatica" data-search="avaliação aprendizagem curso feedback didática">
-          <span class="practice-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 4h16v16H4zM8 8h8M8 12h5M8 16h8"/></svg></span>
-          <span class="post-label">Exemplo · didática</span>
-          <h3>Avaliar para melhorar a próxima turma</h3>
-          <p>Perguntas curtas para conectar objetivos de aprendizagem, atividade e aplicação no trabalho.</p>
-          <button class="side-link" type="button" data-open-practice data-title="Avaliar para melhorar a próxima turma" data-description="Exemplo de prática: ao final da ação, pedir que participantes indiquem o que aprenderam, onde pretendem aplicar e que apoio precisam. A equipe pode retomar as respostas no desenho da próxima turma.">Ver prática →</button>
-        </article>
-        <article class="practice-card" data-practice="acessibilidade" data-search="acessibilidade linguagem simples materiais educacionais inclusão">
-          <span class="practice-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg></span>
-          <span class="post-label">Exemplo · acessibilidade</span>
-          <h3>Materiais acessíveis desde o primeiro rascunho</h3>
-          <p>Uma lista de verificação para revisar linguagem, estrutura e leitura em diferentes dispositivos.</p>
-          <button class="side-link" type="button" data-open-practice data-title="Materiais acessíveis desde o primeiro rascunho" data-description="Exemplo de prática: definir estilos de título, descrever imagens, revisar contraste e preferir instruções em linguagem simples antes da publicação do material. Uma lista compartilhada facilita a revisão por pares.">Ver prática →</button>
+        <article class="practice-card" data-practice="didatica" data-search="doclab docência residência pedagógica formadores servidores escolas">
+          <span class="practice-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2ZM8 7h8M8 11h8"/></svg></span>
+          <span class="post-label">Proposta de colaboração · RENEJUM</span>
+          <h3>DOCLAB · residência docente</h3>
+          <p>Proposta para acompanhar magistradas, magistrados e servidores em atividades de docência, com foco em desenvolver competências de formação.</p>
+          <a class="side-link" href="https://renejum.enfam.jus.br/boas-praticas/oficina-de-inovacao-mude/" target="_blank" rel="noopener noreferrer">Ver registro da proposta ↗</a>
         </article>
       </div>
       <div class="empty-state" id="practice-empty">Não encontrei práticas com esse tema. Tente outra busca.</div>
@@ -427,7 +408,7 @@
       <div class="view-heading">
         <span class="eyebrow">Encontros que aproximam</span>
         <h1 id="agenda-title">Agenda da rede</h1>
-        <p>Palestras, rodas de conversa e atividades compartilhadas. A programação real será publicada após confirmação.</p>
+        <p>Reuniões da rede e oportunidades de formação anunciadas pelas escolas. Público, datas e inscrições seguem as páginas oficiais.</p>
       </div>
       <div class="section-tools">
         <div class="filter-tabs" role="group" aria-label="Filtrar agenda">
@@ -438,23 +419,64 @@
         <button class="button button-primary" type="button" data-compose="agenda">＋ Propor atividade</button>
       </div>
       <div class="event-list" id="event-list">
-        <article class="event-card" data-event="encontro" data-search="roda conversa troca experiências escolas tribunais">
-          <span class="event-date"><span><b>Data</b>a definir</span></span>
-          <div><span class="post-label">Proposta ilustrativa</span><h3>Roda de conversa entre escolas</h3><p>Troca de experiências sobre formação, colaboração e soluções que podem ser adaptadas.</p><div class="event-meta"><span>Virtual</span><span>Participação aberta</span></div></div>
-          <button class="button button-light" type="button" data-event-info="Roda de conversa entre escolas">Detalhes</button>
+        <article class="event-card" data-event="encontro" data-search="reunião nacional escolas poder judiciário rede enaju 11 novembro 2026">
+          <span class="event-date"><span><b>11 NOV</b>10h · BRT</span></span>
+          <div><span class="post-label featured">Encontro confirmado</span><h3>Reunião Nacional das Escolas do Poder Judiciário</h3><p>Encontro virtual de articulação da rede. A pauta detalhada e os apresentadores devem ser consultados na convocação encaminhada às escolas.</p><div class="event-meta"><span>Microsoft Teams</span><span>11/11/2026 · 10h</span></div></div>
+          <button class="button button-light" type="button" data-event-info="Reunião Nacional das Escolas do Poder Judiciário" data-description="11 de novembro de 2026, às 10h (horário de Brasília), em formato virtual pelo Microsoft Teams. A pauta e os apresentadores devem ser consultados na convocação enviada às escolas.">Pauta</button>
         </article>
-        <article class="event-card" data-event="encontro" data-search="mostra boas práticas relatos experiências replicáveis">
-          <span class="event-date"><span><b>Agenda</b>em construção</span></span>
-          <div><span class="post-label">Proposta ilustrativa</span><h3>Mostra de boas práticas</h3><p>Apresentações breves de experiências e materiais produzidos pelas unidades.</p><div class="event-meta"><span>Formato a definir</span><span>Inscrições a confirmar</span></div></div>
-          <button class="button button-light" type="button" data-event-info="Mostra de boas práticas">Detalhes</button>
+        <article class="event-card" data-event="formacao" data-search="bem estar saúde mental unidades judiciárias servidores justiça federal novembro dezembro">
+          <span class="event-date"><span><b>9 NOV</b>9 dez</span></span>
+          <div><span class="post-label">Em andamento · CJF/CEJ</span><h3>Bem-estar e saúde mental em unidades judiciárias</h3><p>Turma 2/2026 para servidores da Justiça Federal, 26 horas-aula, EaD com tutoria. Inscrições encerradas em 4/11.</p><div class="event-meta"><span>Segurança psicológica</span><span>Servidores da Justiça Federal</span></div></div>
+          <a class="button button-light" href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/centro-de-estudos-judiciarios-1/eventos/ead-1/bemunj_serv_t2_2026" target="_blank" rel="noopener noreferrer">Fonte oficial ↗</a>
         </article>
-        <article class="event-card" data-event="formacao" data-search="oficina formação instrutores desenho educacional aprendizagem">
-          <span class="event-date"><span><b>Data</b>a definir</span></span>
-          <div><span class="post-label">Proposta ilustrativa</span><h3>Oficina compartilhada para instrutores</h3><p>Encontro de aprendizagem entre servidoras e servidores interessados em ensinar na rede.</p><div class="event-meta"><span>Formação</span><span>Público: instrutores da rede</span></div></div>
-          <button class="button button-light" type="button" data-event-info="Oficina compartilhada para instrutores">Detalhes</button>
+        <article class="event-card" data-event="formacao" data-search="formação conciliadores justiça federal servidores turma 3 novembro dezembro cjf">
+          <span class="event-date"><span><b>16 NOV</b>16 dez</span></span>
+          <div><span class="post-label">Próxima turma · CJF/CEJ</span><h3>Formação de Conciliadores · parte teórica · Turma 3/2026</h3><p>44 horas-aula, EaD com tutoria. Voltada a servidores que atuam em NUPEMECs ou CEJUSCs; participação mediante indicação regional.</p><div class="event-meta"><span>Início em 16/11</span><span>Indicação por NUPEMEC/CEJUSC</span></div></div>
+          <a class="button button-light" href="https://www.cjf.jus.br/cjf/corregedoria-da-justica-federal/centro-de-estudos-judiciarios-1/eventos/ead-1/forcon-t3-2026" target="_blank" rel="noopener noreferrer">Fonte oficial ↗</a>
+        </article>
+        <article class="event-card" data-event="formacao" data-search="práticas secretaria módulo cível EJEF TJMG servidores curso inscrições novembro dezembro 2026">
+          <span class="event-date"><span><b>20 NOV</b>inscrição</span></span>
+          <div><span class="post-label">Inscrições abertas · EJEF/TJMG</span><h3>Práticas de Secretaria · Módulo Cível · nível básico</h3><p>15 horas, EaD autoinstrucional, realização até 11/12. Inscrições até 20/11; público: servidores e estagiários da 1ª Instância do TJMG.</p><div class="event-meta"><span>Prazo: 20/11</span><span>Vagas conforme edital</span></div></div>
+          <a class="button button-light" href="https://ejef.tjmg.jus.br/2026-09-03-praticas-de-secretaria-modulo-civel-nivel-basico-t1/" target="_blank" rel="noopener noreferrer">Inscrição e edital ↗</a>
         </article>
       </div>
       <div class="empty-state" id="event-empty">Nenhuma atividade aparece nesse filtro.</div>
+      <div class="section-heading program-heading"><div><h2>Programação e catálogos das escolas</h2><p>Curadoria de ofertas reais para servidores; confira elegibilidade e disponibilidade no canal de origem.</p></div></div>
+      <div class="school-program-grid">
+        <article class="school-program-card">
+          <div class="school-program-top"><span class="post-label featured">ENAJU · CNJ</span><span class="school-hours">10h</span></div>
+          <h3>LIA3R · capacitação para utilização</h3>
+          <p>Curso autoinstrucional para magistrados e servidores do Poder Judiciário; inclui uso em secretaria, engenharia de prompts e criação de agentes.</p>
+          <a href="https://enaju.cnj.jus.br/ead/course/info.php?id=499" target="_blank" rel="noopener noreferrer">Ver curso oficial ↗</a>
+        </article>
+        <article class="school-program-card">
+          <div class="school-program-top"><span class="post-label">ENAMAT · Justiça do Trabalho</span><span class="school-hours">EJUDs</span></div>
+          <h3>Sistemas para pesquisa de bens e pessoas</h3>
+          <p>Curso cedido pela ENAMAT e divulgado pela Escola Judicial do TRT-3 para magistrados e servidores do Trabalho. A oferta depende do calendário regional.</p>
+          <a href="https://portal.trt3.jus.br/escola/cursos/avisos-de-curso/formacao-de-magistrados/curso-sistemas-para-pesquisa-de-bens-e-pessoas-cedido-pela-enamat" target="_blank" rel="noopener noreferrer">Ver na EJUD/TRT-3 ↗</a>
+          <a class="school-secondary-link" href="https://ead.enamat.jus.br/" target="_blank" rel="noopener noreferrer">Portal ENAMAT ↗</a>
+        </article>
+        <article class="school-program-card">
+          <div class="school-program-top"><span class="post-label">EJE · Justiça Eleitoral</span><span class="school-hours">3h</span></div>
+          <h3>Aplicação supletiva do CPC às ações eleitorais</h3>
+          <p>Conteúdo assíncrono do CNEJE 2026. Público inclui servidores de gabinetes e zonas eleitorais que atuam na jurisdição eleitoral; aula gravada em 12/5.</p>
+          <a href="https://eadeje.tse.jus.br/course/index.php?categoryid=171" target="_blank" rel="noopener noreferrer">Ver catálogo CNEJE ↗</a>
+        </article>
+        <article class="school-program-card">
+          <div class="school-program-top"><span class="post-label">ENAJUM · Justiça Militar</span><span class="school-hours">10h</span></div>
+          <h3>PROAMB · módulo para servidores efetivos</h3>
+          <p>Ambientação com tutoria para servidores recém-empossados ou redistribuídos na Justiça Militar da União. Acesso restrito ao público interno da JMU.</p>
+          <a href="https://ead.stm.jus.br/dipes/course/index.php?categoryid=23" target="_blank" rel="noopener noreferrer">Ver catálogo EAD-JMU ↗</a>
+        </article>
+        <article class="school-program-card">
+          <div class="school-program-top"><span class="post-label">ENFAM · formação judicial</span><span class="school-hours">Trilhas</span></div>
+          <h3>Heteroidentificação e coordenação educacional</h3>
+          <p>Trilhas de 2026 para servidores ligados a comissões de heteroidentificação e profissionais que planejam, executam e avaliam ações formativas. Inscrições encerradas em 31/8; conteúdo disponível desde 8/9.</p>
+          <a href="https://www.enfam.jus.br/enfam-abre-inscricoes-para-trilhas-de-aprendizagem-autoinstrucionais/" target="_blank" rel="noopener noreferrer">Ver notícia da ENFAM ↗</a>
+          <a class="school-secondary-link" href="https://renejum.enfam.jus.br/lista-de-eventos/" target="_blank" rel="noopener noreferrer">Calendário RENEJUM ↗</a>
+        </article>
+      </div>
+      <p class="program-footnote">Fontes consultadas em 10/11/2026. Cursos com inscrição encerrada ou acesso restrito estão identificados; datas e vagas podem mudar na página responsável.</p>
     </section>
 
     <section class="view" id="view-meu" data-view-panel="meu" aria-labelledby="meu-title">
@@ -520,7 +542,7 @@
       </div>
     </section>
 
-    <footer><span><strong>Rede ENAJU</strong> · Escolas e unidades de capacitação do Poder Judiciário</span><span>Protótipo para discussão · informações oficiais nos canais do CNJ e da ENAJU</span></footer>
+    <footer><span><strong>Rede ENAJU</strong> · Escolas e unidades de capacitação do Poder Judiciário</span><span>Protótipo para discussão · curadoria manual de fontes oficiais · consulta em 10/11/2026</span></footer>
   </main>
 
   <dialog id="compose-dialog" aria-labelledby="compose-title">
@@ -827,7 +849,7 @@
     document.querySelectorAll("[data-event-info]").forEach(function(button) {
       button.addEventListener("click", function() {
         document.getElementById("detail-title").textContent = button.dataset.eventInfo;
-        document.getElementById("detail-copy").textContent = "Esta atividade é uma proposta ilustrativa. A ENAJU poderá publicar a data, o formato e o fluxo de participação depois da confirmação com as unidades responsáveis.";
+        document.getElementById("detail-copy").textContent = button.dataset.description || "Consulte a convocação encaminhada às escolas para confirmar pauta, participantes e orientações de acesso.";
         detailDialog.showModal();
       });
     });
