@@ -1,23 +1,20 @@
 # Portal da Rede ENAJU
 
-Portal demonstrativo para aproximar escolas e unidades de capacitação do Poder Judiciário, compartilhar práticas e divulgar oportunidades de formação.
+Protótipo navegável de uma comunidade de aprendizagem para as escolas e unidades de capacitação do Poder Judiciário. A interface usa um feed de participação inspirado em portais comunitários e a identidade azul, ciano, verde e âmbar da apresentação da Rede.
 
-## O que esta versão apresenta
+## Áreas do portal
 
-- mural de conversas e práticas;
-- catálogo demonstrativo de cursos, vagas e encontros;
-- biblioteca de materiais e experiências;
-- busca e filtros para explorar os conteúdos;
-- identidade visual alinhada à ENAJU e navegação responsiva.
+- **Feed:** conversas, perguntas e contribuições da rede.
+- **Boas práticas:** relatos e materiais que outras unidades podem adaptar.
+- **Agenda:** propostas de encontros e formações compartilhadas.
+- **Meu ENAJU:** desenho de perfil profissional optativo e busca demonstrativa de instrutores por competência, tema ou experiência.
 
-## Situação do projeto
+## Estado da demonstração
 
-Esta é uma demonstração estática de interface. O formulário de compartilhamento apenas apresenta uma prévia; publicações, inscrições, curtidas e dados de usuários não são enviados nem armazenados. Os itens exibidos são ilustrativos. Autenticação, moderação, gestão de conteúdo e integração com os sistemas da ENAJU ainda dependem de definição e desenvolvimento.
+O portal é estático e não possui autenticação nem banco de dados. Publicações e perfis criados pelo formulário aparecem somente como prévias na sessão atual; nada é enviado ou armazenado. Os perfis, práticas e atividades exibidos são exemplos, sem pessoas ou ofertas reais. Não insira dados pessoais nesta versão.
 
-## Publicação
+Para a implantação definitiva, será necessário definir autenticação institucional, armazenamento, moderação e regras claras de privacidade e autorização para exibição dos perfis.
 
-O portal é publicado pelo GitHub Pages a partir do arquivo `index.html` na raiz da branch `main`.
+## Publicação e uso local
 
-## Uso local
-
-Abra `index.html` em um navegador. Não há dependências ou etapa de compilação.
+O GitHub Pages publica `index.html` pela branch `main`, na raiz do repositório. Para visualizar localmente, abra `index.html` em um navegador. Não há dependências nem etapa de compilação.
