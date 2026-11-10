@@ -665,6 +665,46 @@
       const kind = composeKind.value;
       const title = composeTitle.value.trim();
       const body = document.getElementById("compose-content").value.trim();
+      if (kind === "agenda") {
+        const eventCard = document.createElement("article");
+        eventCard.className = "event-card";
+        eventCard.dataset.event = "encontro";
+        eventCard.dataset.search = (title + " " + body).toLocaleLowerCase("pt-BR");
+        const date = document.createElement("span");
+        date.className = "event-date";
+        const dateText = document.createElement("span");
+        const dateHeading = document.createElement("b");
+        dateHeading.textContent = "Data";
+        dateText.append(dateHeading, document.createTextNode("a definir"));
+        date.append(dateText);
+        const details = document.createElement("div");
+        const label = document.createElement("span");
+        label.className = "post-label";
+        label.textContent = "Prévia local";
+        const heading = document.createElement("h3");
+        heading.textContent = title;
+        const paragraph = document.createElement("p");
+        paragraph.textContent = body;
+        const meta = document.createElement("div");
+        meta.className = "event-meta";
+        const status = document.createElement("span");
+        status.textContent = "Não publicada";
+        meta.append(status);
+        details.append(label, heading, paragraph, meta);
+        eventCard.append(date, details);
+        document.getElementById("event-list").prepend(eventCard);
+        eventCards.unshift(eventCard);
+        composeDialog.close();
+        composeForm.reset();
+        showView("agenda");
+        eventFilter = "todos";
+        document.querySelectorAll("[data-event-filter]").forEach(function(item) {
+          item.classList.toggle("active", item.dataset.eventFilter === "todos");
+        });
+        applyEvents();
+        showToast("Prévia de atividade criada nesta sessão. Nada foi enviado ou armazenado.");
+        return;
+      }
       const article = document.createElement("article");
       article.className = "post-card";
       article.dataset.kind = kind;
